@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CastController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FilmController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +32,15 @@ Route::get('/table', function(){
 Route::get('/data-table', function(){
     return view('datatable');
 });
+
+//CRUD ELOQUENT pada tabel film
+Route::get('/film/create', [FilmController::class, 'create']);
+Route::post('/film', [FilmController::class, 'store']);
+Route::get('/film', [FilmController::class, 'index']);
+Route::get('/film/{film_id}', [FilmController::class, 'show']);
+Route::get('/film/{film_id}/edit', [FilmController::class, 'edit']);
+Route::post('/film/{film_id}', [FilmController::class, 'update']);
+Route::delete('/film/{film_id}', [FilmController::class, 'destroy']);
 
 
 //CRUD cast

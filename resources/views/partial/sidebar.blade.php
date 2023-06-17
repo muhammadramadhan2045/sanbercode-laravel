@@ -56,6 +56,22 @@
               </a>
             </li>
           </ul>
+          <li class="nav-item">
+            <a href="/cast" class="nav-link">
+              <i class="nav-icon fas fa-user-alt"></i>
+              <p>
+                Cast
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/film" class="nav-link">
+              <i class="nav-icon fas 	fa fa-film"></i>
+              <p>
+                Film
+              </p>
+            </a>
+          </li>
         </li>
       </ul>
     </nav>
