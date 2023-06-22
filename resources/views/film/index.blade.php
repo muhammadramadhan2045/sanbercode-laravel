@@ -16,6 +16,7 @@
                         <h5 class="card-title">{{$item->judul}}e</h5>
                         <p class="card-text">{{ Str::limit($item->ringkasan, 50) }}</p>
                         <a href="/film/{{$item->id}}" class="btn btn-secondary btn-block btn-sm mb-2">Detail Film</a>
+                        @auth
                         <div class="row">
                             <div class="col">
                                 <a href="/film/{{$item->id}}/edit" class="btn btn-info btn-block btn-sm">Edit</a>
@@ -28,6 +29,7 @@
                                 </form>
                             </div>
                         </div>
+                        @endauth
                     </div>
                 </div>
             </div>

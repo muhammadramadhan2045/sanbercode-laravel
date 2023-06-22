@@ -22,7 +22,7 @@ Index Page
     <h3>Cara bergabung ke SanberBook</h3>
     <ol>
        <li>Mengunjungi website ini</li>
-       <li>Mendaftar di <a href="/register">Form Sign Up</a></li> 
+       <li>Mendaftar di <a href="/registerdalam">Form Sign Up</a></li> 
        <li>Selesai</li>
     </ol>
 @endsection
