@@ -2,7 +2,7 @@
     <!-- Sidebar user (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-            <img src="{{ asset('/admin/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
+            <img src="{{ asset('/admin/dist/img/user.png') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         @auth
         <div class="info">
@@ -10,7 +10,7 @@
         </div>
         <br>
         <div class="info">
-            <h6 style="color: white">({{ Auth::user()->profil->age}} tahun)</h6>
+            <h6 style="color: white" class="badge badge-info">{{ Auth::user()->profil->age}} tahun</h6>
         </div>
         @endauth
 
@@ -48,33 +48,26 @@
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
+                    <i class="nav-icon fas fa-user-alt"></i>
                     <p>
-                        Tables
+                        Peran & Cast
                         <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="/table" class="nav-link">
+                        <a href="/peran" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Table</p>
+                            <p>Peran</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/data-table" class="nav-link">
+                        <a href="/cast" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Data Tables</p>
+                            <p>Cast</p>
                         </a>
                     </li>
                 </ul>
-            <li class="nav-item">
-                <a href="/cast" class="nav-link">
-                    <i class="nav-icon fas fa-user-alt"></i>
-                    <p>
-                        Cast
-                    </p>
-                </a>
             </li>
             <li class="nav-item">
                 <a href="/film" class="nav-link">

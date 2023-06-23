@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('judul')
-    Halaman Index Film
+    Daftar Film
 @endsection
 
 @section('content')
@@ -11,9 +11,11 @@
         @forelse ($film as $item)
             <div class="col-4">
                 <div class="card" >
-                    <img class="card-img-top" src="{{asset('image/'.$item->poster)}}"   alt="Card image cap">
+                    <img class="card-img-top" src="{{asset('image/'.$item->poster)}}" height="250px"   alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">{{$item->judul}}e</h5>
+                        <h3 class="card-title">{{$item->judul}}</h3>
+                        <br>
+                        <span class="badge badge-info">{{$item->genre->nama_genre}}</span>
                         <p class="card-text">{{ Str::limit($item->ringkasan, 50) }}</p>
                         <a href="/film/{{$item->id}}" class="btn btn-secondary btn-block btn-sm mb-2">Detail Film</a>
                         @auth

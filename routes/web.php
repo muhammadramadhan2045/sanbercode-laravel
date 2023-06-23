@@ -7,6 +7,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\GenreController;
+use App\Http\Controllers\RatingController;
+use App\Http\Controllers\PeranController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -24,7 +26,7 @@ use Illuminate\Support\Facades\Auth;
 //     return view('/day1_index');
 // });
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [FilmController::class, 'index']);
 Route::get('/registerdalam', [HomeController::class, 'registerdalam']);
 Route::get('/welcome', [HomeController::class, 'welcome']);
 Route::get('/register', [AuthController::class, 'register']);
@@ -95,6 +97,14 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/genre/{genre_id}', [GenreController::class, 'update']);
     //hapus data berdasarkan id
     Route::delete('/genre/{genre_id}', [GenreController::class, 'destroy']);
+
+
+    //post rating&komen
+    Route::post('/rating{film_id}', [RatingController::class, 'tambah']);
+
+    //peran
+    Route::resource('peran', PeranController::class);
+
 });
 
 

@@ -18,6 +18,21 @@ class Film extends Model
         'poster',
         'genre_id',
     ];
+
+    public function genre()
+    {
+        return $this->belongsTo(Genre::class,'genre_id');
+    }
+
+    public function rating()
+    {
+        return $this->hasMany(Rating::class,'film_id');
+    }
+
+    public function peran()
+    {
+        return $this->hasMany(Peran::class,'film_id');
+    }
 }
 
 

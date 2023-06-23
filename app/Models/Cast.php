@@ -5,19 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Genre extends Model
+class Cast extends Model
 {
     use HasFactory;
 
-    protected $table = 'genre';
+    protected $table = 'cast';
 
     protected $fillable = [
-        'nama_genre',
-        'deskripsi',
+        'nama_cast',
+        'umur',
+        'bio',
     ];
 
-    public function films()
+
+    public function peran()
     {
-        return $this->hasMany(Film::class,'genre_id');
+        return $this->hasMany(Peran::class,'cast_id');
     }
 }

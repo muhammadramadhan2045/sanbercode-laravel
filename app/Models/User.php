@@ -47,4 +47,10 @@ class User extends Authenticatable
     {
         return $this->hasOne(Profil::class,'user_id');
     }
+
+    
+    public function rating()
+    {
+        return $this->hasMany(Rating::class,'user_id');
+    }
 }

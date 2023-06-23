@@ -32,10 +32,12 @@ class GenreController extends Controller
     {
         $request->validate([
             'nama_genre'=>'required|max:255',
+            'deskripsi'=>'required',
         ]);
        
         $genre= new Genre();
         $genre->nama_genre=$request->nama_genre;
+        $genre->deskripsi=$request->deskripsi;
         $genre->save();
         return redirect('/genre')->with('status','Data Berhasil Ditambahkan');
     }
@@ -66,10 +68,12 @@ class GenreController extends Controller
     {
         $request->validate([
             'nama_genre'=>'required|max:255',
+            'deskripsi'=>'required',
         ]);
 
         $genre=Genre::find($id);
         $genre->nama_genre=$request->nama_genre;
+        $genre->deskripsi=$request->deskripsi;
         $genre->save();
         return redirect('/genre')->with('status','Data Berhasil Diubah');
     }
